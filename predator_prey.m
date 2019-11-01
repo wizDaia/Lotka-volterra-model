@@ -39,7 +39,7 @@ end
 %plot
 plot(t,x1,'b.', t,x2, 'r.', t,x3, 'm.'); hold on
 hold off
-legend('predator', 'pray', 'food')
+legend('predator', 'prey', 'food')
 xlabel('time');
 ylabel('population');
 
