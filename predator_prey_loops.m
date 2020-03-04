@@ -35,14 +35,12 @@ for a2 = 0:0.1:1.5
                         x2(i+1) = x2(i) + h*f2;
                         a1(i+1) = a1(i) + h*(f3 + U(i));    
                     end %for euler
-                    if ((x1(end) - x1(1) <= 10^3)) 
-                        if((mean(x1(end - 9:end))) < eps)                   
-							fprintf(fid, '%2.5f\t', a2);
-							fprintf(fid, '%2.5f\t', b1);
-                            fprintf(fid, '%2.5f\t', b2);
-							fprintf(fid, '%2.5f\t', T1);
-							fprintf(fid, '%2.5f\n', T2);
-                        end   
+                    if ((x1(end) - x1(1) <= 10^3))&&((mean(x1(end - 9:end))) < eps)
+                        fprintf(fid, '%2.5f\t', a2);
+                        fprintf(fid, '%2.5f\t', b1);
+                        fprintf(fid, '%2.5f\t', b2);
+                        fprintf(fid, '%2.5f\t', T1);
+                        fprintf(fid, '%2.5f\n', T2);  
                     end %if
                 end %T2
             end %T1
